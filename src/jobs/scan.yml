@@ -1,0 +1,27 @@
+description: Scan Pull Requests and Commits for sensitive findings
+docker:
+  - image: 'nightfallai/nightfall_code_scanner:v0.0.7'
+parameters:
+  event_before:
+    default: ""
+    description: Commit SHA that triggered the previous workflow
+    type: string
+  base_branch:
+    default: ""
+    description: Parent branch to diff against
+    type: string
+steps:
+  - run:
+      name: Install Git & SSH
+      command: |
+        apk add --no-cache git openssh
+  - checkout
+  - run:
+      name: Scan Diff for Findings
+      command: |
+        chmod +x /nightfall_code_scanner
+        /nightfall_code_scanner
+      environment:
+        GITHUB_WORKSPACE: "/root/project"
+        EVENT_BEFORE: << parameters.event_before >>
+        GITHUB_BASE_BRANCH: << parameters.base_branch >>
