@@ -1,0 +1,9 @@
+{
+  "detectors": [
+    "API_KEY",
+    "CRYPTOGRAPHIC_KEY"
+  ],
+  "tokenExclusionList": [
+    "NF-gGpblN9cXW2ENcDBapUNaw3bPZMgcABs"
+  ]
+}
