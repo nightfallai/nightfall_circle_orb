@@ -3,7 +3,6 @@ docker:
   - image: 'nightfallai/nightfall_code_scanner:v0.0.7'
 parameters:
   event_before:
-    default: ""
     description: Commit SHA that triggered the previous workflow
     type: string
   base_branch:
