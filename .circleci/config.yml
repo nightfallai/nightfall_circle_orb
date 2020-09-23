@@ -58,7 +58,6 @@ workflows:
       # jobs and commands to ensure they behave as expected. or, run other
       # integration tests of your choosing
 
-      # an example job
       - nightfall_code_scanner/scan
 
       # publish a semver version of the orb. relies on
