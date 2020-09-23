@@ -6,7 +6,8 @@ display:
     source_url: https://github.com/nightfallai/nightfall_circle_orb
 jobs:
     scan:
-        description: Scan Pull Requests and Commits for sensitive findings
+        description: |
+            Scan Pull Requests and Commits for sensitive findings. You must set the NIGHTFALL_API_KEY as a project environment variable to use this orb. View this orb's source and README for usage instructions: https://github.com/nightfallai/nightfall_circle_orb.
         docker:
             - image: nightfallai/nightfall_code_scanner:v0.0.7
         parameters:
