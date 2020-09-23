@@ -17,19 +17,6 @@ parameters:
     type: string
     default: "dev:alpha"
 
-jobs:
-  # This job is an example of an integration testing job.
-  # This job should execute a command from your orb and verify
-  # the output is as expected, otherwise the job should fail.
-  #
-  # Rename this job and add more as needed.
-  #
-  integration-test-1:
-    executor: orb-tools/ubuntu
-    steps:
-      - checkout
-    # - your-orb/your-orb-command
-
 workflows:
   # This `lint-pack_validate_publish-dev` workflow will run on any commit.
   lint_pack-validate_publish-dev:
@@ -72,7 +59,7 @@ workflows:
       # integration tests of your choosing
 
       # an example job
-      - integration-test-1
+      - nightfall_code_scanner/scan
 
       # publish a semver version of the orb. relies on
       # the commit subject containing the text "[semver:patch|minor|major|skip]"
@@ -84,10 +71,10 @@ workflows:
           orb-name: nightfall/nightfall_code_scanner
 
           add-pr-comment: false
-          fail-if-semver-not-indicated: false
+          fail-if-semver-not-indicated: true
           publish-version-tag: false
           requires:
-            - integration-test-1
+            - nightfall_code_scanner/scan
           filters:
             branches:
               only: master
