@@ -1,0 +1,48 @@
+version: 2.1
+description: |
+    Nightfall DLP Orb: A code review tool that protects you from committing sensitive information to your repositories. You must set the NIGHTFALL_API_KEY as a project environment variable to use this orb. View this orb's source and README for usage instructions: https://github.com/nightfallai/nightfall_circle_orb.
+display:
+    home_url: https://nightfall.ai
+    source_url: https://github.com/nightfallai/nightfall_circle_orb
+jobs:
+    scan:
+        description: Scan Pull Requests and Commits for sensitive findings
+        docker:
+            - image: nightfallai/nightfall_code_scanner:v0.0.7
+        parameters:
+            base_branch:
+                default: ""
+                description: Parent branch to diff against
+                type: string
+            event_before:
+                default: ""
+                description: Commit SHA that triggered the previous workflow
+                type: string
+        steps:
+            - run:
+                command: |
+                    apk add --no-cache git openssh
+                name: Install Git & SSH
+            - checkout
+            - run:
+                command: |
+                    chmod +x /nightfall_code_scanner
+                    /nightfall_code_scanner
+                environment:
+                    EVENT_BEFORE: << parameters.event_before >>
+                    GITHUB_BASE_BRANCH: << parameters.base_branch >>
+                    GITHUB_WORKSPACE: /root/project
+                name: Scan Diff for Findings
+examples:
+    scan_findings:
+        description: Scan diff for potential sensitive items.
+        usage:
+            version: "2.1"
+            orbs:
+                nightfall_code_scanner: nightfall/nightfall_code_scanner@1.0.0
+            workflows:
+                build:
+                    jobs:
+                        - nightfall_code_scanner/scan:
+                            event_before: << pipeline.git.base_revision >>
+
