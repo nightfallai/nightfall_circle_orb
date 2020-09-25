@@ -1,10 +1,7 @@
 version: 2.1
 
 description: >
-  The Nightfall DLP CircleCI Orb scans your code commits for sensitive information - like credentials & secrets, PII, credit card numbers & more - and posts review comments to your code hosting service automatically.
-  The Nightfall DLP CircleCI Orb is intended to be used as a part of your CI to simplify the development process, improve your security, and ensure you never accidentally leak secrets or other sensitive information via an accidental commit.
-  You must set the NIGHTFALL_API_KEY as a project environment variable to use this orb.
-  View this orb's source and README for usage instructions: https://github.com/nightfallai/nightfall_circle_orb.
+  Scan your application code for sensitive data on every CircleCI build using Nightfall’s Data Loss Prevention (DLP) orb. Classify and protect your credentials, PII, credit card numbers and more to avoid committing sensitive information to your repositories.
 
 
 # This information will be displayed in the orb registry and is not mandatory.
