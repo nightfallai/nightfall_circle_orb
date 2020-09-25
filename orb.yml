@@ -1,12 +1,13 @@
 version: 2.1
 description: |
-    Nightfall DLP Orb: A code review tool that protects you from committing sensitive information to your repositories. You must set the NIGHTFALL_API_KEY as a project environment variable to use this orb. View this orb's source and README for usage instructions: https://github.com/nightfallai/nightfall_circle_orb.
+    Scan your application code for sensitive data on every CircleCI build using Nightfall’s Data Loss Prevention (DLP) orb. Classify and protect your credentials, PII, credit card numbers and more to avoid committing sensitive information to your repositories.
 display:
     home_url: https://nightfall.ai
     source_url: https://github.com/nightfallai/nightfall_circle_orb
 jobs:
     scan:
-        description: Scan Pull Requests and Commits for sensitive findings
+        description: |
+            Scan Pull Requests and Commits for sensitive findings. You must set the NIGHTFALL_API_KEY as a CircleCI project environment variable to use this orb. View this orb's source and README for usage instructions.
         docker:
             - image: nightfallai/nightfall_code_scanner:v0.0.7
         parameters:
