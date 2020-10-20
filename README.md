@@ -37,6 +37,7 @@ The Nightfall DLP Orb is powered by the Nightfall DLP API. Learn more and reques
 
 - Place a `.nightfalldlp/` directory within the root of your target repository, and inside it a `config.json` file in which you can configure your condition set (see the `Conditions` section below for more information)
 - See `Additional Configuration` section for more advanced configuration options
+- In the absence of a Nightfall config file, the scan will be performed with a default condition set containing the `API_KEY` and `CRYPTOGRAPHIC_KEY` detectors will be used.
 
 **3. Set up a few environment variables.**     
 These variables should be made available to the Nightfall DLP orb by adding them to `Environment Variables` under `Project Settings` on the CircleCI console. Instructions [here](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project):
