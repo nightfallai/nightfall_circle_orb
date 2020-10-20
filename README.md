@@ -19,7 +19,7 @@ The orb runs when configured as a job in your CircleCI config:
 version: 2.1
 
 orbs:
-  nightfall_code_scanner: nightfall/nightfall_code_scanner@v1.0.0
+  nightfall_code_scanner: nightfall/nightfall_code_scanner@v2.0.0
 
 workflows:
   test_scanner:
@@ -33,7 +33,7 @@ workflows:
 
 The Nightfall DLP Orb is powered by the Nightfall DLP API. Learn more and request access to a free API key **[here](https://nightfall.ai/api/)**. Alternatively, you can email **[sales@nightfall.ai](mailto:sales@nightfall.ai)** to provision a free account.
 
-**2. Set up config file to specify detectors.**
+**2. Set up config file to specify condition set.**
 
 - Place a `.nightfalldlp/` directory within the root of your target repository, and inside it a `config.json` file in which you can configure your condition set (see the `Conditions` section below for more information)
 - See `Additional Configuration` section for more advanced configuration options
@@ -75,7 +75,7 @@ The .nightfalldlp/config.json file is used as a centralized config file to contr
 ### ConditionSetUUID
 
 A condition set uuid is a unique identifier of a condition set, which can be created via [app.nightfall.ai](app.nightfall.ai).
-Once defined, you can simply input the uuid in the your config file, e.g.
+Once defined, you can simply input the uuid in your config file, e.g.
 
 ```json
 { "conditionSetUUID": "A0BA0D76-78B4-4E10-B653-32996060316B" }
