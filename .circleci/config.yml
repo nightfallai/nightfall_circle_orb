@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  nightfall_code_scanner: nightfall/nightfall_code_scanner@dev:v2scan
+  nightfall_code_scanner: nightfall/nightfall_code_scanner@v2.0.0
 
 workflows:
   version: 2
