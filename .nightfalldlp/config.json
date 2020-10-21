@@ -36,7 +36,6 @@
       "minNumFindings": 1,
       "minConfidence": "LIKELY"
     }
-    }
   ],
   "maxNumberConcurrentRoutines": 5,
   "tokenExclusionList": [
