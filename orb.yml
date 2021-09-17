@@ -9,7 +9,7 @@ jobs:
         description: |
             Scan Pull Requests and Commits for sensitive findings. You must set the NIGHTFALL_API_KEY as a CircleCI project environment variable to use this orb. View this orb's source and README for usage instructions.
         docker:
-            - image: nightfallai/nightfall_code_scanner:v1.0.0
+            - image: nightfallai/nightfall_code_scanner:v1.1.2
         parameters:
             base_branch:
                 default: ""
