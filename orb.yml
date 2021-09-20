@@ -1,6 +1,6 @@
 version: 2.1
 description: |
-    Scan your application code  for sensitive data on every CircleCI build using Nightfall’s Data Loss Prevention (DLP) orb. Classify and protect your credentials, PII, credit card numbers and more to avoid committing sensitive information to your repositories.
+    Scan your application code for sensitive data on every CircleCI build using Nightfall’s Data Loss Prevention (DLP) orb. Classify and protect your credentials, PII, credit card numbers and more to avoid committing sensitive information to your repositories.
 display:
     home_url: https://nightfall.ai
     source_url: https://github.com/nightfallai/nightfall_circle_orb
