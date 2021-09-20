@@ -137,7 +137,7 @@ A detector is either a pre-built Nightfall detector or custom regex or wordlist 
 
 #### Custom Regex
 
-We also support custom regex as a `detector`, which are defined as followed:
+We also support custom regex as a `detector`, which are defined as followed: 
 
 ```json
 {
