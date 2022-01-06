@@ -5,7 +5,7 @@
       "detectors": [
         {
           "minNumFindings": 1,
-          "minConfidence": "VERY_UNLIKELY",
+          "minConfidence": "LIKELY",
           "displayName": "api key",
           "detectorType": "NIGHTFALL_DETECTOR",
           "nightfallDetector": "API_KEY"
@@ -38,7 +38,10 @@
     "xG0Ct4Wsu3OTcJnE1dFLAQfRgL6b8tIv"
   ],
   "defaultRedactionConfig": {
-    "infoTypeSubstitutionConfig": {}
+    "maskConfig": {
+      "maskingChar": "*",
+      "numCharsToLeaveUnmasked": 2
+    }
   }
 }
 
