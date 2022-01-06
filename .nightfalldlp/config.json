@@ -16,6 +16,13 @@
           "displayName": "crypto key",
           "detectorType": "NIGHTFALL_DETECTOR",
           "nightfallDetector": "CRYPTOGRAPHIC_KEY"
+        },
+        {
+          "minNumFindings": 1,
+          "minConfidence": "LIKELY",
+          "displayName": "password",
+          "detectorType": "NIGHTFALL_DETECTOR",
+          "nightfallDetector": "PASSWORD_IN_CODE"
         }
       ],
       "logicalOp": "ANY"
