@@ -38,10 +38,7 @@
     "xG0Ct4Wsu3OTcJnE1dFLAQfRgL6b8tIv"
   ],
   "defaultRedactionConfig": {
-    "maskConfig": {
-      "maskingChar": "*",
-      "numCharsToLeaveUnmasked": 2
-    }
+    "infoTypeSubstitutionConfig": {}
   }
 }
 
