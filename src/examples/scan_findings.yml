@@ -2,7 +2,7 @@ description: Scan diff for potential sensitive items.
 usage:
   version: 2.1
   orbs:
-    nightfall_code_scanner: nightfall/nightfall_code_scanner@1.1.4
+    nightfall_code_scanner: nightfall/nightfall_code_scanner@2.0.1
   workflows:
     build:
       jobs:
