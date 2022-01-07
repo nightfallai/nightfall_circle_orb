@@ -281,7 +281,7 @@ In the example, we are ignoring all file paths with a `tests` subdirectory, and 
 Note: we are using [gobwas/glob](https://github.com/gobwas/glob) to match file path patterns. Unlike the token regex matching, file paths must be completely matched by the given pattern. e.g. If `tests` is a subdirectory, it will not be matched by `tests/*`, which is only a partial match.
 
 ## Versioning
-The Nightfall DLP CircleCI Orb issues releases using semantic versioning.
+The Nightfall DLP CircleCI Orb issues releases using semantic versioning. 
 
 ## Support
 For help, please email us at **[support@nightfall.ai](mailto:support@nightfall.ai)**.
