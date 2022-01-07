@@ -38,8 +38,10 @@
     "xG0Ct4Wsu3OTcJnE1dFLAQfRgL6b8tIv"
   ],
   "defaultRedactionConfig": {
-    "substitutionConfig": {
-      "substitutionPhrase": "oh no!"
+    "maskConfig": {
+      "maskingChar": "*",
+      "numCharsToLeaveUnmasked": 2,
+      "charsToIgnore": ["-"]
     }
   }
 }
