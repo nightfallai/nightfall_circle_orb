@@ -40,7 +40,8 @@
   "defaultRedactionConfig": {
     "maskConfig": {
       "maskingChar": "*",
-      "numCharsToLeaveUnmasked": 2
+      "numCharsToLeaveUnmasked": 2,
+      "charsToIgnore": ["-"]
     }
   }
 }
