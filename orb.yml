@@ -40,7 +40,7 @@ examples:
         usage:
             version: 2.1
             orbs:
-                nightfall_code_scanner: nightfall/nightfall_code_scanner@2.0.2
+                nightfall_code_scanner: nightfall/nightfall_code_scanner@3.0.1
             workflows:
                 build:
                     jobs:
