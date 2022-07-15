@@ -19,7 +19,7 @@ The orb runs when configured as a job in your CircleCI config:
 version: 2.1
 
 orbs:
-  nightfall_code_scanner: nightfall/nightfall_code_scanner@3.0.1
+  nightfall_code_scanner: nightfall/nightfall_code_scanner@3.1.0
 
 workflows:
   test_scanner:
@@ -39,7 +39,7 @@ The Nightfall DLP Orb is powered by the Nightfall Developer Platform. With the N
 - See `Additional Configuration` section for more advanced configuration options
 - In the absence of a Nightfall config file, the scan will be performed with a default detection rule containing the `API_KEY`, `CRYPTOGRAPHIC_KEY`, and `PASSWORD_IN_CODE` detectors.
 
-**3. Set up a few environment variables.**     
+**3. Set up a few environment variables.**
 These variables should be made available to the Nightfall DLP orb by adding them to `Environment Variables` under `Project Settings` on the CircleCI console. Instructions [here](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project):
 
 - `NIGHTFALL_API_KEY`
@@ -145,7 +145,7 @@ A detector is either a pre-built Nightfall detector or custom regex or wordlist 
 
 #### Custom Regex
 
-We also support custom regular expressions as a `detector`, which are defined as follows: 
+We also support custom regular expressions as a `detector`, which are defined as follows:
 
 ```json
 {
@@ -263,7 +263,7 @@ To ignore specific tokens from being flagged globally, you can add the `tokenExc
 Here's an example use case:
 
 ```
-tokenExclusionList: ["NF-gGpblN9cXW2ENcDBapUNaw3bPZMgcABs", "^127\\."]
+  "tokenExclusionList": ["NF-gGpblN9cXW2ENcDBapUNaw3bPZMgcABs", "^127\\."]
 ```
 
 In the example above, findings with the API token `NF-gGpblN9cXW2ENcDBapUNaw3bPZMgcABs` as well as local IP addresses starting with `127.` would not be reported. For more information on how we match tokens, take a look at [regexp](https://golang.org/pkg/regexp/).
@@ -274,14 +274,23 @@ To omit files from being scanned, you can add the `fileExclusionList` field to y
 
 Here's an example use case:
 ```
-    fileExclusionList: ["*/tests/*"],
-    fileInclusionList: ["*.go", "*.json"]
+  "fileExclusionList": ["*/tests/*"],
+  "fileInclusionList": ["*.go", "*.json"]
 ```
 In the example, we are ignoring all file paths with a `tests` subdirectory, and only scanning on `go` and `json` files.
 Note: we are using [gobwas/glob](https://github.com/gobwas/glob) to match file path patterns. Unlike the token regex matching, file paths must be completely matched by the given pattern. e.g. If `tests` is a subdirectory, it will not be matched by `tests/*`, which is only a partial match.
 
+### Annotation Levels:
+
+Annotations can be configured to be `notice`, `warning`, or `failure`, by setting the `annotationLevel` key in the configuration object. The check will only fail if `failure` annotations are written.
+
+For example:
+```
+  "annotationLevel": "warning"
+```
+
 ## Versioning
-The Nightfall DLP CircleCI Orb issues releases using semantic versioning. 
+The Nightfall DLP CircleCI Orb issues releases using semantic versioning.
 
 ## Support
 For help, please email us at **[support@nightfall.ai](mailto:support@nightfall.ai)**.
