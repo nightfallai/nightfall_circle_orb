@@ -19,7 +19,7 @@ The orb runs when configured as a job in your CircleCI config:
 version: 2.1
 
 orbs:
-  nightfall_code_scanner: nightfall/nightfall_code_scanner@3.1.0
+  nightfall_code_scanner: nightfall/nightfall_code_scanner@3.2.0
 
 workflows:
   test_scanner:
